@@ -1,0 +1,98 @@
+<div
+  class="interface-sheet__content interface-equipment"
+  data-interface-theme="{{theme}}"
+  data-interface-item-category="{{itemCategory}}"
+>
+  <header class="interface-equipment__header">
+    <div class="interface-equipment__image">
+      {{#if editable}}
+        <button
+          type="button"
+          class="interface-portrait-button"
+          data-action="chooseImage"
+          title="{{localize "INTERFACE.Equipment.ChooseImage"}}"
+        >
+          <img src="{{image}}" alt="{{item.name}}">
+          <span>
+            <i class="fa-solid fa-image" aria-hidden="true"></i>
+            {{localize "INTERFACE.Equipment.ChooseImage"}}
+          </span>
+        </button>
+      {{else}}
+        <div class="interface-portrait-static">
+          <img src="{{image}}" alt="{{item.name}}">
+        </div>
+      {{/if}}
+    </div>
+
+    <label class="interface-character__name">
+      <span>{{localize "INTERFACE.Common.Name"}}</span>
+      <input
+        id="{{rootId}}-name"
+        type="text"
+        name="name"
+        value="{{item.name}}"
+        autocomplete="off"
+      >
+    </label>
+    <span class="interface-equipment__type">{{localize "INTERFACE.Item.Equipment"}}</span>
+  </header>
+
+  <div class="interface-sheet__body">
+    <section class="interface-panel interface-panel--equipment">
+      <div class="interface-form-grid interface-form-grid--equipment">
+        <label class="interface-field">
+          <span>{{localize "INTERFACE.Equipment.Category"}}</span>
+          <select name="system.category">
+            {{#each categories}}
+              <option value="{{value}}" {{#if selected}}selected{{/if}}>
+                {{localize label}}
+              </option>
+            {{/each}}
+          </select>
+        </label>
+
+        <label class="interface-field">
+          <span>{{localize "INTERFACE.Equipment.Quantity"}}</span>
+          <input
+            type="number"
+            name="system.quantity"
+            value="{{system.quantity}}"
+            min="1"
+            step="1"
+          >
+        </label>
+      </div>
+
+      {{#if isWeapon}}
+        <label class="interface-field interface-field--damage">
+          <span>{{localize "INTERFACE.Equipment.DamageFormula"}}</span>
+          <input
+            type="text"
+            name="system.damage.formula"
+            value="{{system.damage.formula}}"
+            placeholder="1d6"
+          >
+        </label>
+      {{else}}
+        <p class="hint">{{localize "INTERFACE.Equipment.HiddenDamageHint"}}</p>
+      {{/if}}
+
+      <label class="interface-field">
+        <span>{{localize "INTERFACE.Equipment.Description"}}</span>
+        <textarea name="system.description" rows="8">{{system.description}}</textarea>
+      </label>
+    </section>
+  </div>
+
+  <footer class="interface-sheet__footer">
+    <span class="interface-autosave">
+      <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+      {{localize "INTERFACE.Common.AutoSaveActive"}}
+    </span>
+    <button type="button" data-action="saveAndClose">
+      <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
+      {{localize "INTERFACE.Common.Save"}}
+    </button>
+  </footer>
+</div>

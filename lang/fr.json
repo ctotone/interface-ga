@@ -1,0 +1,398 @@
+{
+  "TYPES": {
+    "Actor": {
+      "character": "Personnage"
+    },
+    "Item": {
+      "equipment": "Équipement"
+    }
+  },
+  "INTERFACE": {
+    "Actor": {
+      "Character": "Personnage"
+    },
+    "Item": {
+      "Equipment": "Équipement"
+    },
+    "Sheet": {
+      "Character": "Fiche de personnage D100 Interface",
+      "Equipment": "Fiche d’équipement D100 Interface"
+    },
+    "Common": {
+      "Name": "Nom",
+      "Save": "Enregistrer",
+      "MinimalHtmlFieldHint": "Édition texte minimale ; l’éditeur riche et le design final seront adaptés dans une tranche ultérieure.",
+      "Decrease": "Diminuer",
+      "Increase": "Augmenter",
+      "AutoSaveActive": "Enregistrement automatique actif"
+    },
+    "Section": {
+      "Identity": "Identité",
+      "Skills": "Compétences",
+      "Talents": "Talents",
+      "Resources": "Ressources",
+      "Notes": "Notes",
+      "Equipment": "Équipement",
+      "Creation": "Création",
+      "Derived": "Valeurs dérivées",
+      "Inventory": "Inventaire",
+      "Weapons": "Armes",
+      "Combat": "Combat",
+      "Specializations": "Spécialisations",
+      "Progression": "Expérience",
+      "Development": "Développement"
+    },
+    "Identity": {
+      "Age": "Âge",
+      "Profession": "Profession",
+      "Specializations": "Spécialisations"
+    },
+    "Skill": {
+      "Carrure": "Carrure",
+      "Agilite": "Agilité",
+      "Perception": "Perception",
+      "Mental": "Mental",
+      "Intellect": "Intellect",
+      "Charisme": "Charisme"
+    },
+    "Talent": {
+      "Endurance": "Endurance",
+      "ForceBrute": "Force brute",
+      "Robustesse": "Robustesse",
+      "AgiliteCorporelle": "Agilité corporelle",
+      "Precision": "Précision",
+      "Reflexe": "Réflexe",
+      "AcuiteSensorielle": "Acuité sensorielle",
+      "SixiemeSens": "Sixième sens",
+      "Vigilance": "Vigilance",
+      "Decision": "Décision",
+      "Determination": "Détermination",
+      "EquilibreMental": "Équilibre mental",
+      "Creativite": "Créativité",
+      "Erudition": "Érudition",
+      "Logique": "Logique",
+      "Aura": "Aura",
+      "CommunicationExpressive": "Communication expressive",
+      "Persuasion": "Persuasion"
+    },
+    "Resource": {
+      "Wounds": "Blessures",
+      "Stress": "Stress",
+      "Destiny": "Destin",
+      "DestinyInactiveHint": "La réserve de Destin est individuelle et gérée automatiquement par les jets D100."
+    },
+    "Equipment": {
+      "Category": "Catégorie",
+      "CategoryOrdinary": "Objet",
+      "CategoryWeapon": "Arme",
+      "Quantity": "Quantité",
+      "DamageFormula": "Formule de dégâts",
+      "Description": "Description",
+      "HiddenDamageHint": "La formule de dégâts existante est conservée lorsque l’objet redevient ordinaire ; elle est simplement masquée.",
+      "ChooseImage": "Choisir l’image"
+    },
+    "Settings": {
+      "MenuName": "Configuration D100 Interface",
+      "MenuLabel": "Configurer D100 Interface",
+      "MenuHint": "Modifier les paramètres mondiaux validés du système.",
+      "MenuTitle": "Configuration D100 Interface",
+      "StateSection": "États",
+      "DestinySection": "Destin",
+      "CustomDerivedSection": "Valeur dérivée personnalisée",
+      "CustomDerivedEnabled": "Activer la valeur dérivée personnalisée",
+      "CustomDerivedName": "Nom",
+      "CustomDerivedSkills": "Compétences",
+      "CustomDerivedSkillsHint": "Sélectionner exactement deux Compétences lorsque l’option est activée.",
+      "CustomDerivedTalents": "Talents",
+      "CustomDerivedTalentsHint": "Sélectionner exactement six Talents lorsque l’option est activée.",
+      "CustomDerived": {
+        "Invalid": "La valeur dérivée personnalisée exige un nom, exactement deux Compétences et exactement six Talents."
+      },
+      "InvalidNumber": "Valeur invalide pour le paramètre « {setting} ».",
+      "Saved": "Paramètres D100 Interface enregistrés.",
+      "LoadDefaults": "Charger les valeurs recommandées",
+      "Save": "Enregistrer les paramètres",
+      "statePenaltyCoefficient": {
+        "Name": "Coefficient de malus d’état",
+        "Hint": "Valeur recommandée : 3. Minimum : 0."
+      },
+      "destinyGain": {
+        "Name": "Gain de Destin après échec final",
+        "Hint": "Valeur recommandée : 5. Minimum : 0."
+      },
+      "destinyCap": {
+        "Name": "Plafond de Destin",
+        "Hint": "Valeur recommandée : 30. Minimum : 0."
+      },
+      "destinyTriggerChance": {
+        "Name": "Probabilité de déclenchement du Destin",
+        "Hint": "Valeur recommandée : 80 %. De 0 à 100."
+      },
+      "destinyCriticalMinimum": {
+        "Name": "Réserve minimale pour amortir un échec critique",
+        "Hint": "Valeur recommandée : 15. Minimum : 0."
+      },
+      "customDerived": {
+        "Name": "Configuration de la valeur dérivée personnalisée",
+        "Hint": "Nom, deux Compétences et six Talents."
+      },
+      "schemaVersion": {
+        "Name": "Version interne du schéma",
+        "Hint": "Paramètre caché réservé aux migrations internes."
+      },
+      "DestinyInactiveWarning": "Le moteur de Destin est actif. Ses paramètres sont lus à chaque jet D100."
+    },
+    "Derived": {
+      "Melee": "Corps à corps",
+      "Distance": "Distance",
+      "Verbal": "Verbal",
+      "InitiativeBonus": "Bonus d’initiative",
+      "FormulasHidden": "Les formules exactes restent masquées ; seules les valeurs finales sont affichées.",
+      "Initiative": "Initiative"
+    },
+    "State": {
+      "Level": "Niveau",
+      "TotalPenalty": "Malus d’état",
+      "Detail": "Détail du malus",
+      "Wounds": {
+        "Indemne": "Indemne",
+        "Touche": "Touché",
+        "Meurtri": "Meurtri",
+        "Blesse": "Blessé",
+        "Brisse": "Brisé",
+        "Critique": "Critique"
+      },
+      "Stress": {
+        "Stable": "Stable",
+        "Tendu": "Tendu",
+        "Eprouve": "Éprouvé",
+        "Ebranle": "Ébranlé",
+        "Submerge": "Submergé",
+        "Rupture": "Rupture"
+      },
+      "Label": "État"
+    },
+    "Creation": {
+      "TalentTotal": "Total des Talents",
+      "WarningTitle": "Répartition différente des recommandations",
+      "WarningSkills": "Compétences actuelles : {values}. Répartition recommandée : 20 / 30 / 30 / 40 / 40 / 50.",
+      "WarningTalentsUnder": "Total des Talents : {total}. Il reste {remaining} point(s) par rapport au total recommandé de 100.",
+      "WarningTalentsOver": "Total des Talents : {total}. Le total recommandé de 100 est dépassé de {excess} point(s).",
+      "NonBlocking": "Cet avertissement ne bloque ni l’enregistrement ni le jeu.",
+      "Acknowledge": "J’ai pris connaissance",
+      "Acknowledged": "Répartition différente acceptée pour cette ouverture de fiche.",
+      "RecommendedDistribution": "La répartition recommandée de création est respectée."
+    },
+    "Inventory": {
+      "AddOrdinary": "Ajouter un objet",
+      "AddWeapon": "Ajouter une arme",
+      "NewOrdinary": "Nouvel objet",
+      "NewWeapon": "Nouvelle arme",
+      "Empty": "Aucun objet embarqué.",
+      "NoWeapons": "Aucune arme embarquée.",
+      "DropHint": "Tu peux aussi glisser un Item Équipement depuis la barre latérale vers cette fiche.",
+      "WeaponsDuplicatedHint": "Une arme reste visible dans l’Inventaire et apparaît également dans cette zone.",
+      "Add": "Ajouter un objet ou une arme",
+      "AddTitle": "Ajouter à l’inventaire...",
+      "AddPrompt": "Quel type d'objet ajouter à la fiche ?",
+      "DeleteOrdinary": "Supprimer cet objet",
+      "DeleteWeapon": "Supprimer cette arme",
+      "DeleteTitle": "Supprimer l’équipement",
+      "DeletePrompt": "Supprimer définitivement « {name} » de cette fiche ?",
+      "DeleteWarning": "Cette suppression est irréversible.",
+      "DeleteConfirm": "Supprimer",
+      "DeleteCancel": "Annuler",
+      "DialogOrdinary": "Objet",
+      "DialogWeapon": "Arme"
+    },
+    "Specializations": {
+      "Hint": "Une spécialisation par ligne"
+    },
+    "Notes": {
+      "Hint": "Notes libres du joueur"
+    },
+    "Development": {
+      "Title": "Informations de développement",
+      "Temporary": "Développement",
+      "TemporaryHint": "Données temporaires pour les tests ; elles seront retirées de la fiche finale."
+    },
+    "Progression": {
+      "GaugeHint": "Jauge manuelle de 0 à 3",
+      "SkillGain": "Amélioration de Compétence",
+      "SkillGainDetail": "+5 dans une Compétence choisie",
+      "TalentGain": "Amélioration de Talents",
+      "TalentGainDetail": "+15 points à répartir entre les Talents",
+      "SpecializationGain": "Nouvelle Spécialisation",
+      "SpecializationGainDetail": "Ajouter une Spécialisation décidée avec le MJ",
+      "ManualHint": "La jauge et les neuf cases sont déclaratives. Cette tranche n’applique encore aucun gain automatiquement.",
+      "ReadyPrompt": "XP complet : choisissez un gain ci-dessous, appliquez-le manuellement à votre fiche, puis cochez le choix correspondant."
+    },
+    "D100": {
+      "Mode": {
+        "Title": "Mode du jet",
+        "Normal": "Normal",
+        "Advantage": "Avantage",
+        "Disadvantage": "Désavantage",
+        "Hint": "Le mode est choisi manuellement pour la situation ; le moteur ne l’attribue pas."
+      },
+      "RollSkillTitle": "Choisir un Talent associé puis lancer le D100",
+      "RollTalentTitle": "Lancer ce jet de Compétence + Talent",
+      "RollDerivedTitle": "Lancer ce jet dérivé",
+      "ChooseTalentTitle": "Choisir un Talent pour {skill}",
+      "ChooseTalentHint": "Un jet standard utilise toujours une Compétence et l’un de ses trois Talents associés.",
+      "Threshold": "Seuil",
+      "FinalResult": "Résultat final",
+      "Margin": "Marge",
+      "DestinyIntervened": "Le Destin est intervenu",
+      "DestinyHover": "Brut : {raw} — Destin : {correction} — Final : {final}",
+      "NoPermission": "Tu dois être propriétaire du personnage ou MJ pour lancer ce jet.",
+      "InvalidMode": "Le mode de jet demandé est invalide.",
+      "RollError": "Le jet D100 n’a pas pu être finalisé : {message}",
+      "Quality": {
+        "Success": "Réussite",
+        "Failure": "Échec",
+        "AutomaticSuccess": "Réussite automatique",
+        "AutomaticFailure": "Échec automatique",
+        "CriticalSuccess": "Réussite critique",
+        "CriticalFailure": "Échec critique",
+        "SuperCriticalSuccess": "Super réussite critique",
+        "SuperCriticalFailure": "Super échec critique",
+        "AutomaticCriticalSuccess": "Réussite automatique critique",
+        "AutomaticCriticalFailure": "Échec automatique critique"
+      },
+      "NaturalValues": "Dés naturels",
+      "RawResult": "Résultat brut retenu",
+      "DevelopmentCardHint": "Carte technique provisoire de la Tranche 3 ; le rendu final viendra avec les cartes de chat.",
+      "RollAlreadyRunning": "Un jet est déjà en cours pour ce personnage.",
+      "PreRoll": {
+        "Title": "Préparer le jet — {source}",
+        "Mode": "Mode du jet",
+        "Modifier": "Bonus / Malus",
+        "ModifierHint": "Valeur positive : bonus au seuil. Valeur négative : malus au seuil.",
+        "Roll": "Lancer les dés",
+        "InvalidModifier": "Le bonus ou malus doit être un nombre entier.",
+        "ModeHint": "Gauche : désavantage · Centre : normal · Droite : avantage."
+      }
+    },
+    "CreationAssistant": {
+      "Title": "Création du personnage",
+      "Portrait": "Portrait",
+      "ChoosePortrait": "Choisir le portrait",
+      "SkillTokens": "Jetons de Compétences",
+      "SkillTokensHint": "Glisser un jeton sur une Compétence, ou saisir directement sa valeur.",
+      "TokenAvailable": "Jeton disponible",
+      "TokenAssigned": "Jeton attribué à {skill}. Il peut être déplacé vers une autre Compétence ou remis dans la réserve.",
+      "TalentHint": "De 0 à 30 points par Talent.",
+      "DerivedTitle": "Attributs dérivés",
+      "DerivedHint": "Valeurs informatives mises à jour en direct.",
+      "RecapTitle": "Récapitulatif de création",
+      "RecommendedSkills": "Répartition recommandée",
+      "CurrentSkills": "Répartition actuelle",
+      "TokensAssigned": "Jetons attribués",
+      "TalentsAssigned": "Points de Talents attribués",
+      "TalentsRemaining": "Points de Talents disponibles",
+      "Create": "Créer le personnage",
+      "CreateHint": "Le personnage n’est ajouté au monde qu’après cette validation.",
+      "NameRequired": "Le nom du personnage est obligatoire.",
+      "InvalidSkill": "La valeur de la Compétence « {skill} » doit être un entier compris entre 0 et 100.",
+      "InvalidTalent": "La valeur du Talent « {talent} » doit être un entier compris entre 0 et 30.",
+      "WarningTitle": "Répartition hors recommandations",
+      "WarningIntro": "La création peut continuer, mais les points suivants diffèrent des recommandations du système :",
+      "WarningSkills": "Compétences actuelles : {values}. Répartition recommandée : 20 / 30 / 30 / 40 / 40 / 50.",
+      "WarningTalentsUnder": "Total des Talents : {total}. Il reste {remaining} point(s) par rapport au total recommandé de 100.",
+      "WarningTalentsOver": "Total des Talents : {total}. Le total recommandé de 100 est dépassé de {excess} point(s).",
+      "Back": "Revenir en arrière",
+      "Confirm": "Valider quand même",
+      "CreateError": "Le personnage n’a pas pu être créé : {message}",
+      "OpenSheetError": "Le personnage a été créé, mais sa fiche n’a pas pu s’ouvrir automatiquement : {message}"
+    },
+    "Chat": {
+      "D100": {
+        "SuccessMargin": "Marge de réussite : {value}",
+        "FailureMargin": "Marge d'échec : {value}",
+        "NaturalRollsTooltip": "Jets : {values}",
+        "DestinyTooltip": "Jet initial : {raw} | Destin : {correction} | Résultat final : {final}"
+      },
+      "Penalty": {
+        "Label": "Malus ({value})",
+        "Wounds": "Blessure : {value}",
+        "Stress": "Stress : {value}",
+        "Roll": "Malus de jet : {value}"
+      },
+      "Damage": {
+        "Allow": "Permettre les dégâts",
+        "Title": "Jet de dégâts",
+        "NoWeapons": "Aucune arme disponible.",
+        "Undefined": "Dégâts non définis",
+        "Waiting": "En attente du jet",
+        "Result": "{value} dégâts",
+        "Normal": "Dégâts normaux",
+        "Maximum": "Dégâts maximum",
+        "ChooseModeTitle": "Réussite critique !",
+        "ChooseModeHint": "Ce résultat peut donner lieu à des dégâts spéciaux, validez cela avec le MJ puis choisissez si les dégâts sont :",
+        "ActionAlreadyRunning": "Cette action est déjà en cours.",
+        "InvalidSnapshot": "Les données de cette arme ne sont plus exploitables.",
+        "InvalidFormula": "La formule de dégâts de cette arme est invalide.",
+        "RollError": "Le jet de dégâts n'a pas pu être finalisé : {message}",
+        "SelectorError": "La carte de dégâts n'a pas pu être créée : {message}",
+        "NormalButton": "Normaux",
+        "MaximumButton": "Maximum",
+        "ChooseWeapon": "Choisir arme",
+        "ResultTitle": "Dégâts",
+        "WeaponUsed": "Arme utilisée",
+        "MaximumActivated": "Dégâts max. activés"
+      },
+      "GM": {
+        "Title": "Détail MJ — Destin",
+        "Raw": "Résultat initial : {value}",
+        "SecretRoll": "Jet secret du Destin : {value}",
+        "TriggerChance": "Chance d'intervention : {value}",
+        "Correction": "Correction : {value}",
+        "Reserve": "Réserve : {before} → {after}",
+        "Reason": "Diagnostic : {value}"
+      },
+      "Card": {
+        "Unsupported": "Cette carte de chat n'est plus compatible avec cette version du système.",
+        "ActorMissing": "Le personnage lié à cette carte n'est plus disponible.",
+        "GMOnly": "Cette action est réservée au MJ.",
+        "InvalidAction": "Cette action n'est pas autorisée pour cette carte.",
+        "NoPermission": "Tu n'as plus la permission d'utiliser cette action pour ce personnage."
+      }
+    },
+    "Initiative": {
+      "Tie": "Égalité d'initiative à {value} : {names}. Le MJ peut départager avec les outils natifs du Combat.",
+      "Roll": "Lancer l’initiative",
+      "RollError": "L’initiative n’a pas pu être lancée : {message}"
+    },
+    "Tooltip": {
+      "Skill": {
+        "Carrure": "Capacité à mobiliser sa force\nphysique, soutenir l’effort et imposer\nsa puissance corporelle.",
+        "Agilite": "Capacité à coordonner ses gestes, agir\navec précision et réagir rapidement\naux situations.",
+        "Perception": "Capacité à remarquer, interpréter et\nanticiper les informations fournies\npar les sens et l’attention.",
+        "Mental": "Capacité à décider, résister à la\npression et maintenir sa stabilité\nintérieure face aux difficultés.",
+        "Intellect": "Capacité à comprendre, raisonner,\napprendre et élaborer des solutions\nadaptées à une situation.",
+        "Charisme": "Capacité à influencer, convaincre et\ncommuniquer efficacement par sa\nprésence, son attitude et son\nexpression."
+      },
+      "Talent": {
+        "Endurance": "Capacité à soutenir un effort\nprolongé, résister à la fatigue et\npoursuivre malgré l’épuisement\nphysique.",
+        "ForceBrute": "Capacité à produire un effort physique\nintense pour pousser, soulever, briser\nou déplacer quelque chose.",
+        "Robustesse": "Capacité à encaisser les contraintes\nphysiques, résister aux agressions et\nsupporter des conditions difficiles.",
+        "AgiliteCorporelle": "Capacité à contrôler son corps avec\nsouplesse, équilibre et coordination\ndans des mouvements complexes.",
+        "Precision": "Capacité à exécuter un geste fin,\ncontrôlé et exact lorsqu’une grande\njustesse est nécessaire.",
+        "Reflexe": "Capacité à réagir rapidement face à un\névénement soudain, une menace ou un\nchangement imprévu.",
+        "AcuiteSensorielle": "Capacité à percevoir des détails fins\ngrâce aux sens, même lorsqu’ils sont\ndiscrets ou difficiles à distinguer.",
+        "SixiemeSens": "Capacité à pressentir intuitivement un\ndanger, une anomalie ou un élément\ninhabituel avant de l’identifier\nclairement.",
+        "Vigilance": "Capacité à rester attentif à son\nenvironnement et à repérer rapidement\nun changement ou une menace.",
+        "Decision": "Capacité à choisir rapidement une\nligne d’action et à s’y engager malgré\nl’incertitude ou la pression.",
+        "Determination": "Capacité à poursuivre un objectif\nmalgré les obstacles, les difficultés\nou les tentatives de découragement.",
+        "EquilibreMental": "Capacité à conserver son calme, sa\nlucidité et sa stabilité face au\nstress ou aux chocs émotionnels.",
+        "Creativite": "Capacité à imaginer des idées\noriginales, détourner les solutions\nhabituelles et trouver des approches\nnouvelles.",
+        "Erudition": "Capacité à mobiliser des connaissances\nacquises, reconnaître des références\net restituer des informations\nspécialisées.",
+        "Logique": "Capacité à analyser des informations,\nétablir des relations cohérentes et\ndéduire une conclusion rationnelle.",
+        "Aura": "Capacité à imposer naturellement sa\nprésence, attirer l’attention et\nproduire une impression marquante sur\nautrui.",
+        "CommunicationExpressive": "Capacité à transmettre clairement une\nidée, une émotion ou une intention par\nson expression et son attitude.",
+        "Persuasion": "Capacité à influencer le jugement\nd’autrui par des arguments, une\nnégociation ou une approche adaptée."
+      }
+    }
+  }
+}

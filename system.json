@@ -1,0 +1,70 @@
+{
+  "id": "interface",
+  "title": "Système Interface",
+  "type": "system",
+  "version": "1.0.0",
+  "description": "Système D100 générique, léger et orienté narration.",
+  "background": "systems/interface/assets/system-background.webp",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "esmodules": [
+    "scripts/interface.mjs"
+  ],
+  "styles": [
+    "styles/interface.css"
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": [
+          "identity.notes"
+        ]
+      }
+    },
+    "Item": {
+      "equipment": {
+        "htmlFields": [
+          "description"
+        ]
+      }
+    }
+  },
+  "initiative": "1d10 + @derived.initiativeBonus",
+  "media": [],
+  "packs": [
+    {
+      "name": "objects",
+      "label": "Objets",
+      "path": "packs/objects",
+      "type": "Item",
+      "system": "interface",
+      "banner": "systems/interface/assets/banners/banniere_item.webp"
+    },
+    {
+      "name": "weapons",
+      "label": "Armes",
+      "path": "packs/weapons",
+      "type": "Item",
+      "system": "interface",
+      "banner": "systems/interface/assets/banners/banniere_armes.webp"
+    },
+    {
+      "name": "manual",
+      "label": "Manuel du joueur",
+      "path": "packs/manual",
+      "type": "JournalEntry",
+      "system": "interface",
+      "banner": "systems/interface/assets/banners/banniere_manuel.webp"
+    }
+  ]
+}
